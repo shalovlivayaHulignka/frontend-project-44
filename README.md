@@ -2,3 +2,6 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/shalovlivayaHulignka/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/shalovlivayaHulignka/frontend-project-44/actions)
+
+### Asciinema
+https://asciinema.org/a/sCMJHWaSzgyqLGp6XJdlAh2CY
