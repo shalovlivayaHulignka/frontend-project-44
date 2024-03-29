@@ -4,4 +4,8 @@
 [![Actions Status](https://github.com/shalovlivayaHulignka/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/shalovlivayaHulignka/frontend-project-44/actions)
 
 ### Asciinema
-https://asciinema.org/a/sCMJHWaSzgyqLGp6XJdlAh2CY
+brain-even:
+    https://asciinema.org/a/sCMJHWaSzgyqLGp6XJdlAh2CY
+
+brain-calc:
+    https://asciinema.org/a/II8OJiqhODmafAbhW21LH2Ye2
