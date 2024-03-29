@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import greetings from '../greetings.js';
+import result from "../result.js";
 
 const resultCalculation = (numOne, numTwo, operation) => {
     switch (operation) {
@@ -28,13 +29,9 @@ export default () => {
 
         console.log(`Question: ${numOne} ${operation} ${numTwo}`);
         const request = readlineSync.question('Your answer: ');
-        if(request === current) {
-            console.log('Correct!');
-            isCurrent = true;
-        } else {
-            console.log(`'${request}' is wrong answer ;(. Correct answer was '${current}'.`);
-            console.log(`Let's try again, ${name}`);
-            isCurrent = false;
+
+        isCurrent = result(request, current, name);
+        if(!isCurrent) {
             break;
         }
     }

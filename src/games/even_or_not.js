@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import greetings from '../greetings.js';
+import result from "../result.js";
 
 export default () => {
     const name = greetings();
@@ -8,17 +9,14 @@ export default () => {
 
     for(let i = 0; i < 3; i++) {
         const num = Math.floor(Math.random() * 101);
-        console.log(`Question: ${num}`);
         const isEven = num % 2 === 0;
         const current = isEven ? 'yes' : 'no';
+
+        console.log(`Question: ${num}`);
         const request = readlineSync.question('Your answer: ');
-        if(request === current) {
-            console.log('Correct!');
-            isCurrent = true;
-        } else {
-            console.log(`${request} is wrong answer ;(. Correct answer was ${current}.`);
-            console.log(`Let's try again, ${name}`);
-            isCurrent = false;
+
+        isCurrent = result(request, current, name);
+        if(!isCurrent) {
             break;
         }
     }
