@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
+import greetings from '../greetings.js';
 
-export default (name) => {
+export default () => {
+    const name = greetings();
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     let isCurrent = false;
 
