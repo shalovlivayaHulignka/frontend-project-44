@@ -9,3 +9,6 @@ brain-even:
 
 brain-calc:
     https://asciinema.org/a/II8OJiqhODmafAbhW21LH2Ye2
+
+brain-gcd:
+    https://asciinema.org/a/WMNH2GITXK5C6F3FVw853prLA
