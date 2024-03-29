@@ -20,13 +20,18 @@ const progressionGenerator = (first, step, length) => {
 
 export default () => {
     const name = greetings();
+    const maxRandomNumber = 21; // т.е. максмальное число 20
+    const maxSteps = 3;
+    const minRandomLength = 5;
+    const maxRandomLength = 10;
+
     console.log('What number is missing in the progression?');
     let isCurrent = false;
 
-    for(let i = 0; i < 3; i++) {
-        const numFirst = Math.floor(Math.random() * 51);
-        const step = Math.floor(Math.random() * 11);
-        const randomLength = randomNumber(5, 10);       //минимальная и максимальная длина прогрессии
+    for(let i = 0; i < maxSteps; i++) {
+        const numFirst = Math.floor(Math.random() * maxRandomNumber);
+        const step = Math.floor(Math.random() * maxRandomNumber);
+        const randomLength = randomNumber(minRandomLength, maxRandomLength);       //минимальная и максимальная длина прогрессии
         const progressionData = progressionGenerator(numFirst, step, randomLength);
         const current = String(progressionData[1]);
 

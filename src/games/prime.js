@@ -13,11 +13,14 @@ const isNaturalNumber = (num) => {
 
 export default () => {
     const name = greetings();
+    const maxRandomNumber = 21; // т.е. максмальное число 20
+    const maxSteps = 3;
+
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
     let isCurrent = false;
 
-    for(let i = 0; i < 3; i++) {
-        const num = Math.floor(Math.random() * 21); //генерация числа до 20
+    for(let i = 0; i < maxSteps; i++) {
+        const num = Math.floor(Math.random() * maxRandomNumber); //генерация числа до 20
         const current = isNaturalNumber(num) ? 'yes' : 'no';
 
         console.log(`Question: ${num}`);

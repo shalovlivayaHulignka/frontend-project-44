@@ -9,12 +9,15 @@ const gdcCalculation = (numOne, numTwo) => {
 
 export default () => {
     const name = greetings();
+    const maxRandomNumber = 101; // т.е. максмальное число 100
+    const maxSteps = 3;
+
     console.log('Find the greatest common divisor of given numbers.');
     let isCurrent = false;
 
-    for(let i = 0; i < 3; i++) {
-        const numOne = Math.floor(Math.random() * 101);
-        const numTwo = Math.floor(Math.random() * 101);
+    for(let i = 0; i < maxSteps; i++) {
+        const numOne = Math.floor(Math.random() * maxRandomNumber);
+        const numTwo = Math.floor(Math.random() * maxRandomNumber);
         const current = String(gdcCalculation(numOne, numTwo));
 
         console.log(`Question: ${numOne} ${numTwo}`);

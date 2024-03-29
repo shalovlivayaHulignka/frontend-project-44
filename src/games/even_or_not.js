@@ -4,11 +4,14 @@ import result from "../result.js";
 
 export default () => {
     const name = greetings();
+    const maxRandomNumber = 101; // т.е. максмальное число 100
+    const maxSteps = 3;
+
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     let isCurrent = false;
 
-    for(let i = 0; i < 3; i++) {
-        const num = Math.floor(Math.random() * 101);
+    for(let i = 0; i < maxSteps; i++) {
+        const num = Math.floor(Math.random() * maxRandomNumber);
         const isEven = num % 2 === 0;
         const current = isEven ? 'yes' : 'no';
 
