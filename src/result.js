@@ -4,7 +4,7 @@ export default (request, current, name) => {
         return true;
     } else {
         console.log(`'${request}' is wrong answer ;(. Correct answer was '${current}'.`);
-        console.log(`Let's try again, ${name}`);
+        console.log(`Let's try again, ${name}!`);
         return false;
     }
 }
