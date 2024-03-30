@@ -2,14 +2,27 @@ import readlineSync from 'readline-sync';
 import greetings from '../greetings.js';
 import result from '../result.js';
 
-function isNaturalNumber(num) {
-  if (num <= 1) return false;
-  if (num === 2 || num === 3) return true;
-  for (let i = 3; i <= num; i++) {
-    if (num % i === 0 && num === i) return true;
-    if (num % 2 === 0 || num % i === 0) return false;
+const isNaturalNumber = (num) => {
+  let outcome;
+  if (num <= 1) {
+    outcome = false;
   }
-}
+
+  if (num === 2 || num === 3) {
+    outcome = true;
+  }
+
+  for (let i = 3; i <= num; i += 1) {
+    if (num % i === 0 && num === i) {
+      outcome = true;
+    }
+    
+    if (num % 2 === 0 || num % i === 0) {
+      outcome = false;
+    }
+  }
+  return outcome;
+};
 
 export default () => {
   const name = greetings();

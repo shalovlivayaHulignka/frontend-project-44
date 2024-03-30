@@ -3,16 +3,21 @@ import greetings from '../greetings.js';
 import result from '../result.js';
 
 const resultCalculation = (numOne, numTwo, operation) => {
+  let outcome;
   switch (operation) {
     case '+':
-      return numOne + numTwo;
+      outcome =  numOne + numTwo;
+      break;
     case '-':
-      return numOne - numTwo;
+      outcome =  numOne - numTwo;
+      break;
     case '*':
-      return numOne * numTwo;
+      outcome =  numOne * numTwo;
+      break;
     default:
-      return;
+      break;
   }
+  return outcome;
 };
 
 export default () => {
