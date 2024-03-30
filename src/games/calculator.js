@@ -6,13 +6,13 @@ const resultCalculation = (numOne, numTwo, operation) => {
   let outcome;
   switch (operation) {
     case '+':
-      outcome =  numOne + numTwo;
+      outcome = numOne + numTwo;
       break;
     case '-':
-      outcome =  numOne - numTwo;
+      outcome = numOne - numTwo;
       break;
     case '*':
-      outcome =  numOne * numTwo;
+      outcome = numOne * numTwo;
       break;
     default:
       break;
