@@ -17,6 +17,7 @@ const isNaturalNumber = (num) => {
       outcome = true;
     } else if (num % 2 === 0 || num % i === 0) {
       outcome = false;
+      break;
     }
   }
   return outcome;
