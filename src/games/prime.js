@@ -15,9 +15,7 @@ const isNaturalNumber = (num) => {
   for (let i = 3; i <= num; i += 1) {
     if (num % i === 0 && num === i) {
       outcome = true;
-    }
-    
-    if (num % 2 === 0 || num % i === 0) {
+    } else if (num % 2 === 0 || num % i === 0) {
       outcome = false;
     }
   }
