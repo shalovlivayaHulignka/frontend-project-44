@@ -1,6 +1,7 @@
-import readlineSync from 'readline-sync';
-import greetings from '../greetings.js';
-import result from '../result.js';
+import randomNum from "../utils.js";
+import gameCore from "../index.js";
+
+const operations = ['+', '-', '*'];
 
 const resultCalculation = (numOne, numTwo, operation) => {
   let outcome;
@@ -20,31 +21,18 @@ const resultCalculation = (numOne, numTwo, operation) => {
   return outcome;
 };
 
-export default () => {
-  const name = greetings();
-  const maxRandomNumber = 101; // т.е. максмальное число 100
-  const maxSteps = 3;
+const gameLvl = () => {
+  const numOne = randomNum(1, 50);
+  const numTwo = randomNum(1, 50);
+  const operation = operations[randomNum(1, operations.length)];
+  const question = `Question: ${numOne} ${operation} ${numTwo}`;
+  const current = String(resultCalculation(numOne, numTwo, operation));
 
-  console.log('What is the result of the expression?');
-  let isCurrent = false;
-  const operations = ['+', '-', '*'];
-
-  for (let i = 0; i < maxSteps; i += 1) {
-    const numOne = Math.floor(Math.random() * maxRandomNumber);
-    const numTwo = Math.floor(Math.random() * maxRandomNumber);
-    const operation = operations[Math.floor(Math.random() * operations.length)];
-    const current = String(resultCalculation(numOne, numTwo, operation));
-
-    console.log(`Question: ${numOne} ${operation} ${numTwo}`);
-    const request = readlineSync.question('Your answer: ');
-
-    isCurrent = result(request, current, name);
-    if (!isCurrent) {
-      break;
-    }
-  }
-
-  if (isCurrent) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  return [question, current];
 };
+
+export default () => {
+  const description = 'What is the result of the expression?';
+  gameCore(description, gameLvl);
+};
+

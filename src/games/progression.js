@@ -1,8 +1,5 @@
-import readlineSync from 'readline-sync';
-import greetings from '../greetings.js';
-import result from '../result.js';
-
-const randomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
+import randomNum from "../utils.js";
+import gameCore from "../index.js";
 
 const progressionGenerator = (first, step, length) => {
   const data = [first];
@@ -18,34 +15,19 @@ const progressionGenerator = (first, step, length) => {
   return [data.join(' '), current];
 };
 
-export default () => {
-  const name = greetings();
-  const maxRandomNumber = 21; // т.е. максмальное число 20
-  const maxSteps = 3;
-  const minRandomLength = 5;
-  const maxRandomLength = 10;
+const gameLvl = () => {
+  const numFirst = randomNum(1, 20);
+  const step = randomNum(1, 20);
+  const randomLength = randomNum(5, 10);
+  const progressionData = progressionGenerator(numFirst, step, randomLength);
+  const question = `Question: ${progressionData[0]}`;
+  const current = String(progressionData[1]);
 
-  console.log('What number is missing in the progression?');
-  let isCurrent = false;
-
-  for (let i = 0; i < maxSteps; i += 1) {
-    const numFirst = Math.floor(Math.random() * maxRandomNumber);
-    const step = Math.floor(Math.random() * maxRandomNumber);
-    // минимальная и максимальная длина прогрессии
-    const randomLength = randomNumber(minRandomLength, maxRandomLength);
-    const progressionData = progressionGenerator(numFirst, step, randomLength);
-    const current = String(progressionData[1]);
-
-    console.log(`Question: ${progressionData[0]}`);
-    const request = readlineSync.question('Your answer: ');
-
-    isCurrent = result(request, current, name);
-    if (!isCurrent) {
-      break;
-    }
-  }
-
-  if (isCurrent) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  return [question, current];
 };
+
+export default () => {
+  const description = 'What number is missing in the progression?';
+  gameCore(description, gameLvl);
+};
+

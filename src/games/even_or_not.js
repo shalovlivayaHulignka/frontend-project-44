@@ -1,30 +1,15 @@
-import readlineSync from 'readline-sync';
-import greetings from '../greetings.js';
-import result from '../result.js';
+import gameCore from '../index.js';
+import randomNum from '../utils.js';
+
+const gameLvl = () => {
+  const num = randomNum(1, 50);
+  const question = `Question: ${num}`;
+  const current = num % 2 === 0 ? 'yes' : 'no';
+
+  return [question, current];
+};
 
 export default () => {
-  const name = greetings();
-  const maxRandomNumber = 101; // т.е. максмальное число 100
-  const maxSteps = 3;
-
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  let isCurrent = false;
-
-  for (let i = 0; i < maxSteps; i += 1) {
-    const num = Math.floor(Math.random() * maxRandomNumber);
-    const isEven = num % 2 === 0;
-    const current = isEven ? 'yes' : 'no';
-
-    console.log(`Question: ${num}`);
-    const request = readlineSync.question('Your answer: ');
-
-    isCurrent = result(request, current, name);
-    if (!isCurrent) {
-      break;
-    }
-  }
-
-  if (isCurrent) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+  gameCore(description, gameLvl);
 };
