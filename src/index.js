@@ -18,7 +18,7 @@ export default (description, gameLvl) => {
       console.log('Correct!');
     } else {
       console.log(`'${request}' is wrong answer ;(. Correct answer was '${current}'.`);
-      console.log(`Let's try again, ${name}!`);
+      console.log(`Let's try again, ${userName}!`);
       isCurrent = false;
       break;
     }
