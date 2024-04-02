@@ -1,5 +1,5 @@
-import randomNum from "../utils.js";
-import gameCore from "../index.js";
+import randomNum from '../utils.js';
+import gameCore from '../index.js';
 
 const operations = ['+', '-', '*'];
 
