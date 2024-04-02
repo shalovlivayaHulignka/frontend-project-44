@@ -30,4 +30,3 @@ export default () => {
   const description = 'What number is missing in the progression?';
   gameCore(description, gameLvl);
 };
-

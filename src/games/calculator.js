@@ -35,4 +35,3 @@ export default () => {
   const description = 'What is the result of the expression?';
   gameCore(description, gameLvl);
 };
-
