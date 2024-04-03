@@ -16,7 +16,7 @@ export default (description, getRoundData) => {
       console.log('Correct!');
     } else {
       return console.log(
-        `'${request}' is wrong answer ;(. Correct answer was '${current}'.\nLet's try again, ${userName}!`
+        `'${request}' is wrong answer ;(. Correct answer was '${current}'.\nLet's try again, ${userName}!`,
       );
     }
   }

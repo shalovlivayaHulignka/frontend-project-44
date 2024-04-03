@@ -4,7 +4,6 @@ import gameCore from '../index.js';
 const operations = ['+', '-', '*'];
 
 const resultCalculation = (numOne, numTwo, operation) => {
-
   switch (operation) {
     case '+':
       return numOne + numTwo;
@@ -15,7 +14,6 @@ const resultCalculation = (numOne, numTwo, operation) => {
     default:
       return console.log('Неизвестная операция');
   }
-
 };
 
 const getRoundData = () => {
