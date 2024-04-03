@@ -15,7 +15,7 @@ const progressionGenerator = (first, step, length) => {
   return [data.join(' '), current];
 };
 
-const gameLvl = () => {
+const getRoundData = () => {
   const numFirst = randomNum(1, 20);
   const step = randomNum(1, 20);
   const randomLength = randomNum(5, 10);
@@ -28,5 +28,5 @@ const gameLvl = () => {
 
 export default () => {
   const description = 'What number is missing in the progression?';
-  gameCore(description, gameLvl);
+  gameCore(description, getRoundData);
 };

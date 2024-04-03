@@ -4,24 +4,21 @@ import gameCore from '../index.js';
 const operations = ['+', '-', '*'];
 
 const resultCalculation = (numOne, numTwo, operation) => {
-  let outcome;
+
   switch (operation) {
     case '+':
-      outcome = numOne + numTwo;
-      break;
+      return numOne + numTwo;
     case '-':
-      outcome = numOne - numTwo;
-      break;
+      return numOne - numTwo;
     case '*':
-      outcome = numOne * numTwo;
-      break;
+      return numOne * numTwo;
     default:
-      break;
+      return console.log('Неизвестная операция');
   }
-  return outcome;
+
 };
 
-const gameLvl = () => {
+const getRoundData = () => {
   const numOne = randomNum(1, 50);
   const numTwo = randomNum(1, 50);
   const operation = operations[randomNum(1, operations.length)];
@@ -33,5 +30,5 @@ const gameLvl = () => {
 
 export default () => {
   const description = 'What is the result of the expression?';
-  gameCore(description, gameLvl);
+  gameCore(description, getRoundData);
 };

@@ -22,7 +22,7 @@ const isPrimeNumber = (num) => {
   return outcome;
 };
 
-const gameLvl = () => {
+const getRoundData = () => {
   const num = randomNum(1, 50);
   const question = `Question: ${num}`;
   const current = isPrimeNumber(num) ? 'yes' : 'no';
@@ -32,5 +32,5 @@ const gameLvl = () => {
 
 export default () => {
   const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  gameCore(description, gameLvl);
+  gameCore(description, getRoundData);
 };
